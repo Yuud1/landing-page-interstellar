@@ -1,0 +1,88 @@
+@use 'content';
+@use 'critica';
+@use 'assistir';
+@use 'trailer';
+@use 'footer'; 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+.header {
+    background-color: rgb(0, 0, 0);
+    padding: 16px 0;
+    margin-bottom: 40px; 
+    opacity: 0.85;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: 18px;
+        max-width: 1200px; 
+        margin: 0 auto; 
+    }
+
+    .header__logo {
+        max-width: 250px;
+        height: auto;
+
+        .header__logo__img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .header__nav {
+        .header__nav__list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 16px; 
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: rgb(255, 255, 255);
+                    font-size: 16px;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: rgb(210, 210, 210); 
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        .container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header__nav {
+            margin-top: 16px;
+            .header__nav__list {
+                flex-direction: row;
+                gap: 40px; 
+            }
+        }
+    }
+}
+
+body {
+    padding-top: 80px; 
+}
